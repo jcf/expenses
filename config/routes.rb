@@ -12,7 +12,9 @@ Expenses::Application.routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :expenses
-  resource :expenses_forms
+  resources :expenses_forms
+
+  resource :user_session
 
   # Sample resource route with options:
   #   resources :products do

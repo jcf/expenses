@@ -6,6 +6,7 @@ gem "rails", :git => "git://github.com/rails/rails.git"
 gem "pg"
 gem "compass"
 gem "haml"
+gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
 
 group :development do
   gem "mongrel"

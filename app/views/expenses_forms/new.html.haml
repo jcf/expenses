@@ -1,0 +1,26 @@
+%h2 Create a new expenses form
+
+- form_for(@expenses_form) do |expenses_form_form|
+  - expenses_form_form.fields_for(:user) do |user_form|
+    %p
+      = user_form.text_field :name, :placeholder => 'Name'
+
+  - expenses_form_form.fields_for(:expenses) do |expenses_form|
+    %p
+      = expenses_form.label :description
+      %br
+      = expenses_form.text_area :description
+
+    %p
+      = expenses_form.text_field :gross, :placeholder => 'Amount'
+      = expenses_form.select :currency, Expense.currency_codes_for_select, :selected => 'GBP'
+      = expenses_form.text_field :exchange_rate, :placeholder => 'Exchange Rate'
+      \= £0.00
+      = expenses_form.text_field :vat_rate, :placeholder => Expense::VAT_RATE
+      \%
+      = check_box_tag :vat_included
+      = label_tag :vat_included, 'VAT included'
+
+    %h3
+      Total:
+      %span.total £0.00

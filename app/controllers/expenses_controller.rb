@@ -3,7 +3,6 @@ class ExpensesController < ApplicationController
   end
 
   def new
-    @expenses_form = ExpensesForm.new
   end
 
   def create
