@@ -1,0 +1,20 @@
+shared: &shared
+  adapter: postgresql
+  encoding: unicode
+  database: expenses_development
+  pool: 5
+  min_messages: warning
+  username: <%= ENV['USER'] %>
+
+development:
+  <<: *shared
+  database: expenses_development
+
+test:
+  <<: *shared
+  database: expenses_test
+
+production:
+  <<: *shared
+  database: expenses_production
+
